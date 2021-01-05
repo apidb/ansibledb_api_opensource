@@ -49,9 +49,14 @@ curl -s http://<URL>/api/servers | jq '[.[] | {name:.ansible_facts.ansible_fqdn,
 ## Production
 In order to use this in production, we suggest using uwsgi and something like nginx in front of it.
 
+CentOS 7
 ```url
 https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-centos-7
 ``` 
+Ubuntu 20
+```url
+https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uwsgi-and-nginx-on-ubuntu-20-04
+```
 
 
 ## Contributing
