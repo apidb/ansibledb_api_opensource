@@ -11,8 +11,7 @@ servers = db.servers
 
 @app.route('/api/setup')
 def setup():
-    servers.create_index("ansible_fqdn")
-    servers.create_index("ansible_kernel")
+    servers.create_index("ansible_facts.ansible_fqdn")
     return servers.index_information()
 
 @app.route('/api/ansiblefacts', methods=['POST'])
@@ -20,7 +19,6 @@ def ansiblefacts():
     if request.method == 'POST':
         content = json.loads(request.data)
         fqdn =  content["ansible_facts"]["ansible_fqdn"]
-        #servers.insert_one(content)
         servers.update({"ansible_facts.ansible_fqdn":fqdn}, {"$set": content }, True)
     return content
 
