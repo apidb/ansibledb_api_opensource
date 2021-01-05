@@ -1,6 +1,8 @@
 # ansibledb-opensource
 
-ansibledb-opensource is way to send data from ansible to an api and then read that data. 
+ansibledb-opensource is way to send data from ansible to an api and then read that data. You will need to install the ansibledb-opensource collection from Ansible galaxy and configure it to point to your API server
+
+This is the API Server that recieves requests from Ansible and also offers an end point to get your data
 
 ## Installation
 
@@ -39,7 +41,7 @@ python3 server.py
 
 ## Usage
 
-### Get Server Versions (using JQ to filter)
+#### Get Server Versions (using JQ to filter)
 ```bash
 curl -s http://<URL>/api/servers | jq '[.[] | {name:.ansible_facts.ansible_fqdn, distribution:.ansible_facts.ansible_distribution,  version: .ansible_facts.ansible_distribution_version}]'
 ```
