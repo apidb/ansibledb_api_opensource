@@ -12,6 +12,7 @@ servers = db.servers
 @app.route('/api/setup')
 def setup():
     servers.create_index("ansible_fqdn")
+    servers.create_index("ansible_kernel")
     return servers.index_information()
 
 @app.route('/api/ansiblefacts', methods=['POST'])
@@ -19,7 +20,8 @@ def ansiblefacts():
     if request.method == 'POST':
         content = json.loads(request.data)
         fqdn =  content["ansible_facts"]["ansible_fqdn"]
-        servers.update({"ansible_fqdn":fqdn}, {"$set": content }, True)
+        #servers.insert_one(content)
+        servers.update({"ansible_facts.ansible_fqdn":fqdn}, {"$set": content }, True)
     return content
 
 
@@ -31,4 +33,5 @@ def ansibleservers():
     return result
 
 if __name__ == '__main__':
-    app.run()
+    #app.run(debug=True, host='0.0.0.0') ## Debug Flask app
+    app.run(host='0.0.0.0')
