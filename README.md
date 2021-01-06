@@ -54,6 +54,13 @@ python3 server.py
 ## Usage
 
 #### Get Server Versions (using JQ to filter)
+
+Install JQ:
+````
+apt/yum install jq
+````
+
+Now use JQ to pull out the data you want to see.
 ```bash
 curl -s http://<URL>/api/servers | jq '[.[] | {name:.ansible_facts.ansible_fqdn, distribution:.ansible_facts.ansible_distribution,  version: .ansible_facts.ansible_distribution_version}]'
 ```
