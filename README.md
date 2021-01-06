@@ -8,13 +8,20 @@ This is the API Server that recieves requests from Ansible and also offers an en
 
 Clone the Repository
 ```bash
-git clone https://github.com/apidb-io/ansibledb-opensource.git
+$ git clone https://github.com/apidb-io/ansibledb-opensource.git
+$ cd ansibledb-opensource/
 ```
 
-Install python3 and requirements
+Install python3 and requirements (YUM based)
 ```bash
-yum install python3
-pip3 install -r requirements.txt
+$ yum install python3
+$ pip3 install -r requirements.txt
+```
+
+Install python3 and requirements (APT based)
+```bash
+$ apt install python3 python3-pip
+$ pip3 install -r requirements.txt
 ```
 
 #### Install MongoDB Server (Community) from:
@@ -27,11 +34,16 @@ https://www.mongodb.com/try/download/community
 wget https://repo.mongodb.org/yum/redhat/8/mongodb-org/4.4/x86_64/RPMS/mongodb-org-server-4.4.3-1.el8.x86_64.rpm
 yum localinstall mongodb-org-server-4.4.3-1.el8.x86_64.rpm
 systemctl start mongod 
-systemctl enable mongod 
-
+systemctl enable mongod
+systemctl status mongodb
 ```
 
-
+#### Example: Ubuntu 18.04 (Mongo version 3.6)
+```bash
+apt install mongodb
+systemctl enable --now mongodb
+systemctl status mongodb
+```
 
 ## Running the Server
 
