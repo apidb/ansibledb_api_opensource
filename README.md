@@ -8,7 +8,7 @@ This is the API Server that recieves requests from Ansible and also offers an en
 
 Clone the Repository
 ```bash
-$ git clone https://github.com/apidb-io/ansibledb-opensource.git
+$ git clone https://github.com/apidb-io/ansibledb_api_opensource.git
 $ cd ansibledb-opensource/
 ```
 
