@@ -1,3 +1,9 @@
+#!/bin/bash
+
+if ! [ $(id -u) = 0 ]; then
+   echo "This script must be run as root" 
+   exit 1
+fi
 
 install_folder=/opt/ansibledb_api_opensource
 
@@ -11,13 +17,13 @@ ostype=$(cat /etc/os-release  | grep "^ID==*" | awk -F= '{print $2}'| sed 's/"//
 osversion=$(cat /etc/os-release  | grep "^VERSION_ID==*" | awk -F= '{print $2}'| sed 's/"//g')
 
 if [ $ostype = "centos" ]; then
-   wget centos.sh
+   wget https://raw.githubusercontent.com/apidb-io/ansibledb_api_opensource/main/install/centos.sh
    source centos.sh
 elif [ $ostype = "ubuntu" ]; then
-   wget ubuntu.sh
+   wget https://raw.githubusercontent.com/apidb-io/ansibledb_api_opensource/main/install/ubuntu.sh
    source ubuntu.sh
 else
-  echo "No Idea exit!"
+  echo "OS Unknown"
   exit 1
 fi
 
