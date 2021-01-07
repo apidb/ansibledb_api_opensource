@@ -1,7 +1,17 @@
 mongo_install()
 {
-  # Centos8
-   deb -i https://repo.mongodb.org/yum/redhat/8/mongodb-org/4.4/x86_64/RPMS/mongodb-org-server-4.4.3-1.el8.x86_64.rpm
+
+if [[ $osversion = 18* ]]; then
+	echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+  elif [[ $osversion = 20* ]]; then
+	echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+  else
+    echo "Unknown Version"
+    exit 1
+  fi
+
+apt-get update
+apt-get install -y mongodb-org
 
 }
 
