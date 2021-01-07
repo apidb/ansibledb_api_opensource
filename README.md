@@ -103,6 +103,16 @@ curl -s http://ansibledb_api_IP_address:5000/api/servers | jq '[.[] | {name:.ans
 ````
 curl -s http://ansibledb_api_IP_address:5000/api/servers | jq --arg INPUT "$INPUT" -r '.[] | select(.ansible_facts.ansible_distribution_version | tostring | contains("18.04")) | (.ansible_facts.ansible_fqdn+"\"")'
 ````
+# HOW TO CLEAR OUT MONGODB (start again!)
+if you get into issues with the database, run the following to clear out all data from mongodb and start again:
+````
+$ ssh mongodb_server
+$ mongo ansibledb --eval 'db.servers.drop()'
+MongoDB shell version v3.6.3
+connecting to: mongodb://127.0.0.1:27017/ansibledb
+MongoDB server version: 3.6.3
+true
+````
 
 ## Production
 In order to use this in production, we suggest using uwsgi and something like nginx in front of it.
