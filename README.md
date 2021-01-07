@@ -102,8 +102,7 @@ curl -s http://ansibledb_api_IP_address:5000/api/servers | jq '[.[] | {name:.ans
 #### Generate a list of servernames that match a specific fact (in this case ubuntu 18.04):
 ````
 curl -s http://ansibledb_api_IP_address:5000/api/servers | jq --arg INPUT "$INPUT" -r '.[] | select(.ansible_facts.ansible_distribution_version | tostring | contains("18.04")) | (.ansible_facts.ansible_fqdn+"\"")'
-
-```
+````
 
 ## Production
 In order to use this in production, we suggest using uwsgi and something like nginx in front of it.
