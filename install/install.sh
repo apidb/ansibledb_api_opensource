@@ -13,7 +13,6 @@ if [ ! -f "/etc/os-release" ]; then
 fi
 
 ostype=$(cat /etc/os-release  | grep "^ID==*" | awk -F= '{print $2}'| sed 's/"//g')
-
 osversion=$(cat /etc/os-release  | grep "^VERSION_ID==*" | awk -F= '{print $2}'| sed 's/"//g')
 
 if [ $ostype = "centos" ]; then

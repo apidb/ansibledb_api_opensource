@@ -6,6 +6,9 @@ This is the API Server that recieves requests from Ansible and also offers an en
 
 ## Installation
 
+#One Line Install
+wget -O - https://raw.githubusercontent.com/apidb-io/ansibledb_api_opensource/main/install/install.sh | bash
+
 Clone the Repository
 ```bash
 $ git clone https://github.com/apidb-io/ansibledb_api_opensource.git
