@@ -20,6 +20,7 @@ $ pip3 install -r requirements.txt
 
 Install python3 and requirements (APT based)
 ```bash
+$ apt-get update
 $ apt install python3 python3-pip
 $ pip3 install -r requirements.txt
 ```
