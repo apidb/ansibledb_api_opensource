@@ -14,7 +14,7 @@ mongo_install()
 
 packages()
 {
-  yum install python3 git
+  yum -y install python3 git
 }
 
 mongo_services()
