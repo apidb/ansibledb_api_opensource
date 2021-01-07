@@ -15,7 +15,7 @@ fi
 ostype=$(cat /etc/os-release  | grep "^ID==*" | awk -F= '{print $2}'| sed 's/"//g')
 osversion=$(cat /etc/os-release  | grep "^VERSION_ID==*" | awk -F= '{print $2}'| sed 's/"//g')
 
-if [ $ostype = "centos" ]; then
+if [ $ostype = "centos" ] ||  [ $ostype = "rhel" ] ; then
    wget https://raw.githubusercontent.com/apidb-io/ansibledb_api_opensource/main/install/centos.sh
    source centos.sh
 elif [ $ostype = "ubuntu" ]; then
