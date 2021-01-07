@@ -1,6 +1,6 @@
 # ansibledb_api_opensource
 
-ansibledb_api_opensource is way to send data from ansible to an api and then read that data. You will need to install the ansibledb-opensource collection from Ansible galaxy and configure it to point to your API server
+ansibledb_api_opensource is way to send data from ansible to an api and then read that data. You will need to install the ansibledb-opensource collection from Ansible galaxy and configure it to point to your API server. **You can find the Galaxy collection here: https://galaxy.ansible.com/apidb/ansibledb_opensource**
 
 This is the API Server that recieves requests from Ansible and also offers an end point to get your data
 
@@ -61,8 +61,12 @@ MongoDB will listen on port :5000. If you are running mongoDB on a remote server
 python3 server.py
 ```
 
+## Now setup ansibledb_opensource:
+ansibledb_opensource is a collection of ansible roles to collect facts from all your servers and store them in the mongoDB. With a small amount of setup, you'll be up and running.
+**You can find the Galaxy collection here: https://galaxy.ansible.com/apidb/ansibledb_opensource**
+
 ### Usage
-Once you've sent over some data, install JQ and run the following JQ commands to pull out the data you want:
+Once you've send over some data, install JQ and run the following JQ commands to pull out the data you want:
 
 #### Get Server Versions (using JQ to filter)
 
