@@ -14,14 +14,14 @@ if [[ $osversion = 18* ]]; then
   fi
 
 apt-get update
-apt-get install mongodb-org
+apt-get install -y mongodb-org
 
 }
 
 
 packages()
 {
-  apt-get install python3-pip git python3
+  apt-get install -y python3-pip git python3
 }
 
 mongo_services()
