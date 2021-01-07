@@ -103,7 +103,7 @@ curl -s http://ansibledb_api_IP_address:5000/api/servers | jq '[.[] | {name:.ans
 ````
 curl -s http://ansibledb_api_IP_address:5000/api/servers | jq --arg INPUT "$INPUT" -r '.[] | select(.ansible_facts.ansible_distribution_version | tostring | contains("18.04")) | (.ansible_facts.ansible_fqdn+"\"")'
 ````
-# HOW TO CLEAR OUT MONGODB (start again!)
+## How to clear all data out of mongodb
 if you get into issues with the database, run the following to clear out all data from mongodb and start again:
 ````
 $ ssh mongodb_server
