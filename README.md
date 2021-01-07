@@ -60,6 +60,16 @@ MongoDB will listen on port :5000. If you are running mongoDB on a remote server
 ```bash
 python3 server.py
 ```
+### Check port :5000 is listening:
+````
+$ netstat -tnlp
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:5000            0.0.0.0:*               LISTEN      19421/python3
+tcp        0      0 127.0.0.1:27017         0.0.0.0:*               LISTEN      -
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      -
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
+tcp6       0      0 :::22                   :::*                    LISTEN      -
+````
 
 ## Now setup ansibledb_opensource:
 ansibledb_opensource is a collection of ansible roles to collect facts from all your servers and store them in the mongoDB. With a small amount of setup, you'll be up and running.
