@@ -1,6 +1,9 @@
 mongo_install()
 {
 
+apt-get install gnupg
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+
 if [[ $osversion = 18* ]]; then
 	echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
   elif [[ $osversion = 20* ]]; then
@@ -11,14 +14,14 @@ if [[ $osversion = 18* ]]; then
   fi
 
 apt-get update
-apt-get install -y mongodb-org
+apt-get install mongodb-org
 
 }
 
 
 packages()
 {
-  apt install python3-pip git python3
+  apt-get install python3-pip git python3
 }
 
 mongo_services()
