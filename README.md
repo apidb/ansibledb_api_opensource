@@ -118,6 +118,17 @@ curl -s http://ansibledb_api_IP_address:5000/api/servers | jq '[.[] | {name:.ans
 ````
 curl -s http://ansibledb_api_IP_address:5000/api/servers | jq --arg INPUT "$INPUT" -r '.[] | select(.ansible_facts.ansible_distribution_version | tostring | contains("18.04")) | (.ansible_facts.ansible_fqdn+"\"")'
 ````
+
+#### Count all OS distributions:
+````
+curl -s http://ansibledb_api_IP_address:5000/api/servers | jq  "group_by(.ansible_facts.ansible_distribution_version) | map({([0].ansible_facts.ansible_distribution_version):length})"
+````
+
+#### (custom local fact) List all Instance types:
+````
+curl -s http://54.75.0.84:5000/api/servers | jq  "group_by(.ansible_facts.ansible_local.local.local_facts.instance_type) | map({(.[0].ansible_facts.ansible_local.local.local_facts.instance_type):length})"
+````
+
 ## How to clear all data out of mongodb
 if you get into issues with the database, run the following to clear out all data from mongodb and start again:
 ````
