@@ -11,6 +11,10 @@ One Line Install
 wget -O - https://raw.githubusercontent.com/apidb-io/ansibledb_api_opensource/main/install/install.sh | bash
 ```
 
+<details>
+ <summary>Expand for manual setup per OS</summary>
+  <p>
+    
 Clone the Repository
 ```bash
 $ git clone https://github.com/apidb-io/ansibledb_api_opensource.git
@@ -65,6 +69,9 @@ MongoDB will listen on port :5000. If you are running mongoDB on a remote server
 ```bash
 python3 server.py
 ```
+
+</p></details>
+
 ### Check port :5000 is listening:
 ````
 $ netstat -tnlp
@@ -75,6 +82,8 @@ tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      
 tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -
 tcp6       0      0 :::22                   :::*                    LISTEN      -
 ````
+  * Do you need to open the FW for port :5000 to allow remote connectivity?
+
 
 ## Now setup ansibledb_opensource:
 ansibledb_opensource is a collection of ansible roles to collect facts from all your servers and store them in the mongoDB. With a small amount of setup, you'll be up and running.
