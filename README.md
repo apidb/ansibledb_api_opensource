@@ -1,8 +1,8 @@
 # ansibledb_api_opensource
 
-ansibledb_api_opensource is way to send data from ansible to an api and then pill out that data and answer questions about your environments. Once **ansibledb_api_opensource** has been setup, install and setup the ansibledb-opensource collection from Ansible galaxy and configure it to point to your API server. **You can find the Galaxy collection here: https://galaxy.ansible.com/apidb/ansibledb_opensource** This makes it very easy to collect and store all your server data.
+ansibledb_api_opensource is a simple mongoDB that stores ansible 'setup' JSON files. Once **ansibledb_api_opensource** has been setup, install and setup the ansibledb-opensource collection from Ansible galaxy and configure it to point to your ansibledb_API_opensource server. **You can find the Galaxy collection here: https://galaxy.ansible.com/apidb/ansibledb_opensource**. This makes it very easy to collect and store all your server facts and retrieve them using the API and JQ.
 
-This is the API Server that recieves requests from Ansible and also offers an end point to get your data
+The ansibledb_API_opensource Server recieves requests from Ansible and offers an end point to get your data.
 
 ## Installation
 
