@@ -37,7 +37,8 @@ app_setup()
 setup_complete()
 {
 echo ""
-echo "Now run - # python3 /opt/ansibledb_api_opensource/server.sh"
+echo "---------------------------------------------"
+echo "Now run - # python3 /opt/ansibledb_api_opensource/server.py"
 echo ""
 }
 
