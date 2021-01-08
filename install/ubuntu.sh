@@ -26,7 +26,7 @@ packages()
 
 mongo_services()
 {
-  systemctl enable --now mongodb
+  systemctl enable --now mongod
 }
 
 
